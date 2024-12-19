@@ -3,7 +3,6 @@ from django.urls import reverse
 from django.db.models import UniqueConstraint
 from django.db.models.functions import Lower
 
-
 class Genre(models.Model):
     """Model representing a book genre."""
     name = models.CharField(

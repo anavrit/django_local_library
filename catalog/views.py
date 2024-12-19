@@ -31,11 +31,17 @@ def index(request):
 
 class BookListView(generic.ListView):
     model = Book
-    context_object_name = 'chinese_books'
+    paginate_by = 3
     template_name = 'books/book_list.html'
-    def get_queryset(self):
-        return Book.objects.filter(language__name__iexact='Chinese')
 
 class BookDetailView(generic.DetailView):
     model = Book
+
+class AuthorListView(generic.ListView):
+    model = Author
+    paginate_by = 3
+    template_name = 'books/author_list.html'
+
+class AuthorDetailView(generic.DetailView):
+    model = Author
 
